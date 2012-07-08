@@ -10,11 +10,6 @@ import java.util.HashMap;
 import java.util.Map.Entry;
 import java.util.logging.Logger;
 
-import me.NerdsWBNerds.SimpleWarps.Commands.DelWarpCommand;
-import me.NerdsWBNerds.SimpleWarps.Commands.OtherCommand;
-import me.NerdsWBNerds.SimpleWarps.Commands.SetWarpCommand;
-import me.NerdsWBNerds.SimpleWarps.Commands.WarpCommand;
-
 import org.bukkit.Location;
 import org.bukkit.Server;
 import org.bukkit.entity.Player;
@@ -46,13 +41,6 @@ public class SimpleWarps extends JavaPlugin {
 			}
 	    }
 
-		this.getCommand("warp").setExecutor(new WarpCommand(this));
-		this.getCommand("setwarp").setExecutor(new SetWarpCommand(this));
-		this.getCommand("addwarp").setExecutor(new SetWarpCommand(this));
-		this.getCommand("delwarp").setExecutor(new DelWarpCommand(this));
-		this.getCommand("removewarp").setExecutor(new DelWarpCommand(this));
-		this.getCommand("sw").setExecutor(new OtherCommand(this));
-		
 		loadConf();
 	}
 	
