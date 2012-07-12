@@ -10,7 +10,6 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 public class DelWarpCommand implements CommandExecutor{
-	@SuppressWarnings("unused")
 	private SimpleWarps plugin;
 	public DelWarpCommand(SimpleWarps s){
 		plugin = s;
@@ -42,6 +41,9 @@ public class DelWarpCommand implements CommandExecutor{
 				
 				removeWarp(args[0]);
 				tell(player, GOLD + "[SimpleWarps] " + GREEN + "The warp " + AQUA + args[0] + GREEN + " has been removed.");
+				plugin.saveConf();
+				
+				return true;
 			}
 		}else{
 			//////////////// -------------------------------------------- /////////////////
@@ -60,6 +62,9 @@ public class DelWarpCommand implements CommandExecutor{
 				
 				removeWarp(args[0]);
 				System.out.println("[SimpleWarps] The warp " + args[0] + " has been removed.");
+				plugin.saveConf();
+				
+				return true;
 			}
 		}
 		

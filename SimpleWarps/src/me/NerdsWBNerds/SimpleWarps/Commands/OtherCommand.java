@@ -35,7 +35,8 @@ public class OtherCommand implements CommandExecutor{
 						if((args[0].equalsIgnoreCase("1") || args[0].equalsIgnoreCase("true")) && SimpleWarps.useOP == false){
 							SimpleWarps.useOP = true;
 							plugin.saveConf();
-							
+
+							plugin.saveConf();
 							player.sendMessage(ChatColor.GOLD + "[SimpleWarps] " + ChatColor.GREEN + "Now using OP permissions.");
 							return true;
 						}
@@ -43,7 +44,8 @@ public class OtherCommand implements CommandExecutor{
 						if((args[0].equalsIgnoreCase("0") || args[0].equalsIgnoreCase("false")) && SimpleWarps.useOP == true){
 							SimpleWarps.useOP = false;
 							plugin.saveConf();
-							
+
+							plugin.saveConf();
 							player.sendMessage(ChatColor.GOLD + "[SimpleWarps] " + ChatColor.GREEN + "Now using permissions, not OP.");
 							return true;
 						}
@@ -78,7 +80,8 @@ public class OtherCommand implements CommandExecutor{
 						if((args[0].equalsIgnoreCase("1") || args[0].equalsIgnoreCase("true")) && SimpleWarps.useOP == false){
 							SimpleWarps.useOP = true;
 							plugin.saveConf();
-							
+
+							plugin.saveConf();
 							System.out.println("[SimpleWarps] Now using OP permissions.");
 							return true;
 						}
@@ -86,7 +89,8 @@ public class OtherCommand implements CommandExecutor{
 						if((args[0].equalsIgnoreCase("0") || args[0].equalsIgnoreCase("false")) && SimpleWarps.useOP == true){
 							SimpleWarps.useOP = false;
 							plugin.saveConf();
-							
+
+							plugin.saveConf();
 							System.out.println("[SimpleWarps] Now using permissions, not OP.");
 							return true;
 						}

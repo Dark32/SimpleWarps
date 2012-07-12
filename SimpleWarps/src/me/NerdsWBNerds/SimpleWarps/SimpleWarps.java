@@ -153,6 +153,8 @@ public class SimpleWarps extends JavaPlugin {
 		try{
 			ObjectInputStream ois = new ObjectInputStream(new FileInputStream(Path));
 			Object result = ois.readObject();
+			
+			ois.close();
 			if(result != null)
 				return (HashMap<String,String>)result;
 			else
