@@ -24,7 +24,6 @@ public class SimpleWarps extends JavaPlugin {
 	public SWListener Listener = new SWListener(this);
 	public static Server server;
 	public Logger log;
-	public static boolean useOP = false;
 	
 	public static String Path = "plugins/SimpleWarps" + File.separator + "Warps.dat";
 	public static HashMap<String, String> warps = new HashMap<String, String>();
@@ -46,33 +45,11 @@ public class SimpleWarps extends JavaPlugin {
 			}
 	    }
 
-		loadConf();
-		
 		this.getCommand("warp").setExecutor(new WarpCommand(this));
 		this.getCommand("setwarp").setExecutor(new SetWarpCommand(this));
 		this.getCommand("addwarp").setExecutor(new SetWarpCommand(this));
 		this.getCommand("delwarp").setExecutor(new DelWarpCommand(this));
 		this.getCommand("removewarp").setExecutor(new DelWarpCommand(this));
-		this.getCommand("sw").setExecutor(new OtherCommand(this));
-	}
-	
-	public void loadConf(){
-		if(this.getConfig().contains("useOP")){
-			try{
-				useOP = getConfig().getBoolean("useOP");
-			}catch(Exception e){
-				useOP = false;
-			}
-		}else{
-			getConfig().set("useOP", false);
-		}
-
-		saveConfig();
-	}
-	
-	public void saveConf(){
-		getConfig().set("useOP", useOP);
-		saveConfig();
 	}
 	
 	public void onDisable(){
@@ -89,17 +66,10 @@ public class SimpleWarps extends JavaPlugin {
 	}
 	
 	public static boolean hasPerm(Player p, String perm){
-		if(useOP){
-			if(p.isOp())
-				return true;
-			else
-				return false;
-		}else{
-			if(p.hasPermission(perm))
-				return true;
-			else
-				return false;
-		}
+		if(p.hasPermission(perm))
+			return true;
+		else
+			return false;
 	}
 	
 	public static void addWarp(String w, Location to){

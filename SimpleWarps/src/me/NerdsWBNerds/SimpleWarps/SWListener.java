@@ -39,17 +39,11 @@ public class SWListener implements Listener {
 						return;
 					}
 					
-					if(!e.getPlayer().hasPermission("simplewarps.usesign") && !SimpleWarps.useOP){
-						e.getPlayer().sendMessage(ChatColor.RED + "You do not have permission to do this.");
+					if(!e.getPlayer().hasPermission("simplewarps.usesign")){
+						e.getPlayer().sendMessage(ChatColor.RED + "You do not have permission to use warp signs.");
 						return;
 					}
 
-
-					if(!e.getPlayer().hasPermission("simplewarps.warps." + warp) && !SimpleWarps.useOP){
-						e.getPlayer().sendMessage(RED + "[SimpleWarps] You don't have permission to do this.");
-						return;
-					}
-					
 					e.getPlayer().teleport(SimpleWarps.getWarp(warp));
 					e.getPlayer().sendMessage(GOLD + "[SimpleWarps] " + GREEN + "You have been teleported to the " + AQUA + warp + GREEN + " warp.");
 				}

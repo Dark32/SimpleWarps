@@ -29,8 +29,8 @@ public class WarpCommand implements CommandExecutor{
 			
 			if(cmd.getName().equalsIgnoreCase("warp")){
 				if(args.length==0){
-					if(!player.hasPermission("simplewarps.list") && !SimpleWarps.useOP){
-						tell(player, RED + "[SimpleWarps] You don't have permission to do this!");
+					if(!player.hasPermission("simplewarps.list")){
+						tell(player, RED + "[SimpleWarps] You don't have permission to list all warps.");
 						return true;
 					}
 					
@@ -50,8 +50,8 @@ public class WarpCommand implements CommandExecutor{
 						return true;
 					}
 
-					if(!player.hasPermission("simplewarps.warps." + args[0]) && !SimpleWarps.useOP){
-						tell(player, RED + "[SimpleWarps] You don't have permission to do this.");
+					if(!player.hasPermission("simplewarps.warps." + args[0])){
+						tell(player, RED + "[SimpleWarps] You don't have permission to warp to this warp.");
 						return true;
 					}
 					
@@ -62,7 +62,7 @@ public class WarpCommand implements CommandExecutor{
 				
 				if(args.length==2){
 					if(!SimpleWarps.hasPerm(player, "simplewarps.warpothers")){
-						tell(player, RED + "[SimpleWarps] You don't have permission to do this!");
+						tell(player, RED + "[SimpleWarps] You don't have permission to  warp other people!");
 						return true;
 					}
 					

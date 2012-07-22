@@ -41,7 +41,7 @@ public class DelWarpCommand implements CommandExecutor{
 				
 				removeWarp(args[0]);
 				tell(player, GOLD + "[SimpleWarps] " + GREEN + "The warp " + AQUA + args[0] + GREEN + " has been removed.");
-				plugin.saveConf();
+				plugin.saveConfig();
 				
 				return true;
 			}
@@ -62,7 +62,7 @@ public class DelWarpCommand implements CommandExecutor{
 				
 				removeWarp(args[0]);
 				System.out.println("[SimpleWarps] The warp " + args[0] + " has been removed.");
-				plugin.saveConf();
+				plugin.saveConfig();
 				
 				return true;
 			}
