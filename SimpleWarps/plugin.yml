@@ -1,19 +1,16 @@
 name: SimpleWarps
 main: me.NerdsWBNerds.SimpleWarps.SimpleWarps
-version: 2.0
+version: 3.0
 commands:
    warp:
       description: Show list of warp, or warp to or warp other people to a warp.
-      usage: /warp or /warp <warp_name> or /warp <player_name> <warp_name>
+      usage: /warp, /warp <warp_name>, /warp <player_name> <warp_name>
+      aliases: [swarp]
    setwarp:
-      description: Set a warp at your location
-      usage: /setwarp <name>
-   addwarp:
-      description: Set a warp at your location
-      usage: /addwarp <name>
+      description: Set a warp at your location.
+      usage: /setwarp <warp_name>
+      aliases: [addwarp]
    delwarp:
-      description: Delete warp
-      usage: /delwarp <name>
-   removewarp:
-      description: Delete warp
-      usage: /removewarp <name>
+      description: Delete warp by name.
+      usage: /delwarp <warp_name>
+      aliases: [deletewarp, removewarp]
