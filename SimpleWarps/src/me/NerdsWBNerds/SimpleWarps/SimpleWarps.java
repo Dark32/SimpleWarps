@@ -109,6 +109,28 @@ public class SimpleWarps extends JavaPlugin{
 				}
 			}
 			
+			if(cmd.getName().equalsIgnoreCase("setwarp") && args.length == 1){
+				if(!player.hasPermission("simplewarps.cmd.add")){
+					player.sendMessage(ChatColor.RED + "Error: You must have permission simplewarps.cmd.add to add warps.");
+					return true;
+				}
+		
+				if(args[0].length() > 13){
+					player.sendMessage(ChatColor.RED + "Error: Warp names must be less than 14 characters long.");
+					return true;
+				}
+				
+				if(isWarp(args[0])){
+					getWarp(args[0]).location = player.getLocation();
+				}else{
+					addWarp(args[0], player.getLocation());
+				}
+				
+				player.sendMessage(prefix + ChatColor.AQUA + "'" + args[0] + "'" + ChatColor.GREEN + " warp set at your location.");
+				saveWarps();
+				return true;
+			}
+			
 			if(cmd.getName().equalsIgnoreCase("delwarp") && args.length == 1){
 				if(!player.hasPermission("simplewarps.cmd.remove")){
 					player.sendMessage(ChatColor.RED + "Error: You must have permission simplewarps.cmd.remove to delete warps.");
