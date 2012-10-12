@@ -52,7 +52,11 @@ public class SimpleWarps extends JavaPlugin{
 					}
 					
 					player.sendMessage(ChatColor.DARK_AQUA + "** SIMPLEWARPS WARP LIST **");
-					player.sendMessage(ChatColor.GREEN + list.substring(1));
+					
+					if(list.length() > 1)
+						player.sendMessage(ChatColor.GREEN + list.substring(1));
+					else
+						player.sendMessage(ChatColor.GREEN + "There are currently no warps.");
 					
 					return true;
 				}
