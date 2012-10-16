@@ -72,7 +72,7 @@ public class SimpleWarps extends JavaPlugin{
 						return true;
 					}
 
-					if(!player.hasPermission("simplewarps.warp." + args[0])){
+					if(!player.hasPermission("simplewarps.warp." + args[0]) && !player.hasPermission("simplewarps.warp.*")){
 						player.sendMessage(ChatColor.RED + "Error: You must have permission simplewarps.warp." + args[0] + " to go to this warp.");
 						return true;
 					}

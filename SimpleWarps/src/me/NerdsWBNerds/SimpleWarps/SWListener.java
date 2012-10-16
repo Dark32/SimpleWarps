@@ -40,7 +40,7 @@ public class SWListener implements Listener{
 						return;
 					}
 
-					if(e.getPlayer().hasPermission("simplewarps.sign.all") || e.getPlayer().hasPermission("simplewarps.warp." + warp)){
+					if(e.getPlayer().hasPermission("simplewarps.sign.all") || (e.getPlayer().hasPermission("simplewarps.warp." + warp) ||  e.getPlayer().hasPermission("simplewarps.warp.*"))){
 						e.getPlayer().teleport(SimpleWarps.getWarp(warp).location);
 						e.getPlayer().sendMessage(SimpleWarps.prefix + ChatColor.GREEN + "You have been teleported to the " + ChatColor.AQUA + "'" + warp + "'" + ChatColor.GREEN + " warp.");
 					}else{
